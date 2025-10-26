@@ -1,6 +1,5 @@
 on:
   schedule:
-    - cron: '*/1 * * * *'  # Runs every minute
     - cron: '0 */12 * * *'  # Runs every 12 hours
   workflow_dispatch:
 
@@ -16,4 +15,4 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            ls
+            ./db_backup.sh
